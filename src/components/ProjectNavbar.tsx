@@ -10,7 +10,7 @@ const Nav_Items = [
     { name: "Home", link: "/my-Archives/" },
     { name: "Dashboard", link: "/my-Archives/Dashboard" },
     { name: "Barriers", link: "/my-Archives/Barriers" },
-    { name: "Readings", link: "/my-Archives/Readings" }
+    { name: "Readings", link: "/my-Archives/ReadingsHistory" }
 ]
 
 export const ProjectNavbar = () => {

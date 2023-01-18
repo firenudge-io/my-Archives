@@ -4,14 +4,16 @@ import { ProjectFooter } from "../components/ProjectFooter"
 import { Home } from "../pages/Home"
 import { Barriers } from "../pages/Barriers"
 import { Dashboard } from "../pages/Dashboard"
-import { Readings } from "../pages/Readings"
+import { ReadingsHistory } from "../pages/ReadingsHistory"
+import { ReadingsSummary } from "../pages/ReadingsSummary"
 
 const RouteItems = [
     { name: "Home", link: "/", element: <Home /> },
     { name: "Home", link: "/my-Archives/", element: <Home /> },
     { name: "Home", link: "/my-Archives/Dashboard", element: <Dashboard /> },
     { name: "Home", link: "/my-Archives/Barriers", element: <Barriers /> },
-    { name: "Home", link: "/my-Archives/Readings", element: <Readings /> }
+    { name: "Home", link: "/my-Archives/Readings/History", element: <ReadingsHistory /> },
+    { name: "Home", link: "/my-Archives/Readings/Summary", element: <ReadingsSummary /> }
 ]
 
 

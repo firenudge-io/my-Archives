@@ -2,7 +2,7 @@ import { Table } from "flowbite-react";
 import { useState } from "react"
 import { ReadURL2 } from "../constants/URLS"
 
-export const ReadingsComponent = () => {
+export const ReadingsHistoryTable = () => {
     //make a get request
     const [data, setData] = useState([])
 
@@ -29,7 +29,7 @@ export const ReadingsComponent = () => {
     fetchData();
 
     return (
-        <div className="container mb-16 flex flex-col justify-start mt-16 mx-auto">
+        <div className="container mb-16 flex flex-col justify-start mx-auto">
 
             <div className="w-11/12 xl:w-3/4 mx-auto relative overflow-x-auto shadow-md shadow-gray-200 dark:shadow-gray-600 rounded-xl">
                 <Table className="text-sm text-left text-gray-500 dark:text-gray-400 rounded-xl table-auto">
