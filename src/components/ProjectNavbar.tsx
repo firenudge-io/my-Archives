@@ -2,12 +2,19 @@ import { Navbar } from "flowbite-react"
 import DarkModeButton from "../hooks/DarkModeButton"
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { SignOut } from "../security/SignOut";
+import { auth } from "../config/Firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const Nav_Items = [
     { name: "Home", link: "/my-Archives/" },
+    { name: "Dashboard", link: "/my-Archives/Dashboard" },
+    { name: "Barriers", link: "/my-Archives/Barriers" }
 ]
 
 export const ProjectNavbar = () => {
+
+    const [user] = useAuthState(auth);
 
     const [active, setActive] = useState(Nav_Items[0].name)
 
@@ -32,6 +39,30 @@ export const ProjectNavbar = () => {
                 </Link>
                 <Navbar.Toggle />
                 <Navbar.Collapse>
+                    {
+                        user &&
+                        Nav_Items.map((item, index) => {
+                            return (
+                                <Link
+                                    onClick={() =>
+                                        ButtonPress(item.name)}
+                                    to={item.link}
+                                    key={index}>
+                                    <Navbar.Link
+                                        className="mt-1 text-center rounded-lg"
+                                        active={active === item.name}>
+                                        {item.name}
+                                    </Navbar.Link>
+                                </Link>
+                            )
+                        })
+                    }
+                    {
+                        user &&
+                        <div className="self-center">
+                            <SignOut />
+                        </div>
+                    }
                     <div className="self-center">
                         <DarkModeButton />
                     </div>

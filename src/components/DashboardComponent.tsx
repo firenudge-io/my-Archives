@@ -3,7 +3,7 @@ import { useState } from "react"
 import { SheetsURL } from "../constants/URLS";
 
 
-export const ProjectForm = () => {
+export const DashboardComponent = () => {
 
     // sheet
     const [rec, setRec] = useState([])
