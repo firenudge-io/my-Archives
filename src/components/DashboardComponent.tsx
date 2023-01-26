@@ -36,7 +36,8 @@ export const DashboardComponent = () => {
                 problem: item.item[5],
                 steps: item.item[6],
                 today: item.item[7],
-                gratitude: item.item[8]
+                gratitude: item.item[8],
+                description: item.item[9],
             }
         })
 
@@ -102,10 +103,14 @@ export const DashboardComponent = () => {
                                     {thisPost.score === "" ? <></> : thisPost.score}
                                 </p>
                                 <p>
-                                    <b>{thisPost.check === "" ? <></> : "Check: "}</b>
+                                    <b>{thisPost.check === "" ? <></> : "Check-in: "}</b>
                                     {thisPost.check === "" ? <></> : thisPost.check}
                                 </p>
-                                <p>
+                                <p className="mt-3">
+                                    <b>{thisPost.description === "" ? <></> : "Description: "}</b>
+                                    {thisPost.description === "" ? <></> : thisPost.description}
+                                </p>
+                                <p className="mt-3">
                                     <b>{thisPost.reason === "" ? <></> : "Reason: "}</b>
                                     {thisPost.reason === "" ? <></> : thisPost.reason}
                                 </p>
@@ -113,7 +118,7 @@ export const DashboardComponent = () => {
                                     <b>{thisPost.underlying === "" ? <></> : "Underlying: "}</b>
                                     {thisPost.underlying === "" ? <></> : thisPost.underlying}
                                 </p>
-                                <p>
+                                <p className="mt-3">
                                     <b>{thisPost.problem === "" ? <></> : "Problem: "}</b>
                                     {thisPost.problem === "" ? <></> : thisPost.problem}
                                 </p>
@@ -121,7 +126,7 @@ export const DashboardComponent = () => {
                                     <b>{thisPost.steps === "" ? <></> : "Steps: "}</b>
                                     {thisPost.steps === "" ? <></> : thisPost.steps}
                                 </p>
-                                <p>
+                                <p className="mt-3">
                                     <b>{thisPost.today === "" ? <></> : "Today: "}</b>
                                     {thisPost.today === "" ? <></> : thisPost.today}
                                 </p>
