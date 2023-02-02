@@ -1,0 +1,2 @@
+export const SheetsURL = 'https://script.google.com/macros/s/AKfycbzIb-cFk3OjDH5bugT-f-xz-hiSRyQbtpPvSVy-24DHt3KTxKYPqiRUywHlj1EPksoMQA/exec'
+export const FooterURL = 'https://script.google.com/macros/s/AKfycbxYWVhtLbQWqxB6rXkHGpnzqWlG72qNYztW5Upn8mFq_i1Sqrhkah-YbChnK_krAFqb/exec'
