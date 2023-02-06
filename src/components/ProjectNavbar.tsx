@@ -9,7 +9,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 const Nav_Items = [
     { name: "Home", link: "/my-Archives/" },
     { name: "Dashboard", link: "/my-Archives/Dashboard" },
-    { name: "Barriers", link: "/my-Archives/Barriers" }
+    { name: "Barriers", link: "/my-Archives/Barriers" },
+    { name: "Readings", link: "/my-Archives/Readings" }
 ]
 
 export const ProjectNavbar = () => {

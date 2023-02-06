@@ -8,7 +8,7 @@ export const SignOut = () => {
 
     const signOutWithGoogle = async () => {
         await signOut(auth)
-        navigate('/my-Affirmations')
+        navigate('/my-Archives')
     }
 
     return (
