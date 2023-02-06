@@ -32,23 +32,6 @@ export const ProjectNavbar = () => {
                 </Link>
                 <Navbar.Toggle />
                 <Navbar.Collapse>
-                    {
-                        Nav_Items.map((item, index) => {
-                            return (
-                                <Link
-                                    onClick={() =>
-                                        ButtonPress(item.name)}
-                                    to={item.link}
-                                    key={index}>
-                                    <Navbar.Link
-                                        className="mt-1 text-center rounded-lg"
-                                        active={active === item.name}>
-                                        {item.name}
-                                    </Navbar.Link>
-                                </Link>
-                            )
-                        })
-                    }
                     <div className="self-center">
                         <DarkModeButton />
                     </div>

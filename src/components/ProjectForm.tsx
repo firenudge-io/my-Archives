@@ -81,8 +81,8 @@ export const ProjectForm = () => {
                     // IF DATE IS EMPTY
                     date === "" ?
                         <div className="flex flex-col text-center">
-                            <h4 className="text-2xl text-red-700">No data found</h4>
-                            <h4 className="text-2xl text-blue-700">Try again</h4>
+                            <h4 className="text-2xl font-bold text-red-700">No data found</h4>
+                            <h4 className="text-2xl font-bold text-blue-700">Try again</h4>
                         </div>
                         :
                         rec.map((thisPost) => (
