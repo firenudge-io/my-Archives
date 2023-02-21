@@ -75,13 +75,10 @@ export const ReadingsSummaryCard = () => {
                                         <Card className="w-96 m-2 bg-white border-b dark:bg-gray-800 dark:border-gray-700 shadow-md shadow-gray-200 dark:shadow-gray-600 rounded-2xl">
                                             <div className="text-right text-gray-900 dark:text-white">
                                                 {
-                                                    <div>
+                                                    <div className="font-bold">
                                                         <span className="text-gray-500 dark:text-gray-400 font-sans">{new Date(item[0].date).toLocaleDateString('en-US', { weekday: 'long' })}</span>, <span className="font-sans">{new Date(item[0].date).toLocaleDateString('en-US', { month: 'long' })}</span> <span className="font-sans">{new Date(item[0].date).toLocaleDateString('en-US', { day: 'numeric' })}</span>
                                                     </div>
                                                 }
-                                            </div>
-                                            <div className="text-gray-900 dark:text-white text-xl text-center">
-                                                <b>{item[1].book}</b>
                                             </div>
                                             <div className="text-gray-900 dark:text-white">
                                                 {item[3].summary}

@@ -39,11 +39,11 @@ export const BarrierComponent = () => {
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:text-gray-400 dark:bg-gray-900 dark:border-gray-700 rounded-xl">
                         <tr>
                             <th className="px-6 py-3">Date</th>
-                            <th className="px-6 py-3">Time</th>
+                            <th className="px-6 py-3">Type</th>
                             <th className="px-6 py-3">b1</th>
                             <th className="px-6 py-3">b2</th>
                             <th className="px-6 py-3">b3</th>
-                            <th className="px-6 py-3">b4s</th>
+                            <th className="px-6 py-3">b4</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,23 +58,33 @@ export const BarrierComponent = () => {
                                                         <b>{item[0].date}</b>
                                                         :
                                                         <div>
-                                                            <span className="text-gray-400 font-sans">{new Date(item[0].date).toLocaleDateString('en-US', { weekday: 'long' })}</span>,
-                                                            <span className="text-gray-900 dark:text-gray-50 font-mono ml-2">{new Date(item[0].date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                                                            <span className="text-gray-900 dark:text-gray-50 font-mono">{new Date(item[0].date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })},</span><br />
+                                                            <span className="text-gray-400 font-sans">{new Date(item[0].date).toLocaleDateString('en-US', { weekday: 'long' })}</span>
+                                                            {
+                                                                item[1].time.length > 5 ?
+                                                                    <div>
+                                                                        <span className="text-gray-900 font-mono font-bold">{item[1].time.split("T")[1].slice(0, 2)}</span>:
+                                                                        <span className="text-gray-400 dark:text-gray-50 font-mono font-bold ml-0.5">{item[1].time.split("T")[1].slice(3, 5)}</span>
+                                                                    </div>
+                                                                    :
+                                                                    <></>
+                                                            }
                                                         </div>
                                                 }
                                             </td>
-                                            <td className="px-6 py-4 text-gray-900 dark:text-white">
-                                                {
-                                                    item[1].time.length > 5 ?
-                                                        <div>
-                                                            <span className="text-gray-900 font-mono font-bold">{item[1].time.split("T")[1].slice(0, 2)}</span>:
-                                                            <span className="text-gray-400 dark:text-gray-50 font-mono font-bold ml-0.5">{item[1].time.split("T")[1].slice(3, 5)}</span>
-                                                        </div>
+                                            <td className="px-6 py-4 text-gray-900 dark:text-white">{
+                                                item[2].b1.split(")")[0].split("(")[1] === "A" ?
+                                                    <span className="text-green-500 font-bold">Analysis</span>
+                                                    :
+                                                    item[2].b1.split(")")[0].split("(")[1] === "C" ?
+                                                        <span className="text-blue-500 font-bold">Classic</span>
                                                         :
-                                                        <></>
-                                                }
-                                            </td>
-                                            <td className="px-6 py-4 text-gray-900 dark:text-white">{item[2].b1}</td>
+                                                        item[2].b1.split(")")[0].split("(")[1] === "S" ?
+                                                            <span className="text-red-500 font-bold">Situation</span>
+                                                            :
+                                                            <></>
+                                            }</td>
+                                            <td className="px-6 py-4 text-gray-900 dark:text-white">{item[2].b1.split(")")[1]}</td>
                                             <td className="px-6 py-4 text-gray-900 dark:text-white">{item[3].b2}</td>
                                             <td className="px-6 py-4 text-gray-900 dark:text-white">{item[4].b3}</td>
                                             <td className="px-6 py-4 text-gray-900 dark:text-white">{item[5].b4}</td>
